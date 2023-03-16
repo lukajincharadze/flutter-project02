@@ -28,43 +28,50 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Navigation"),
       ),
-      body: Center(
+      body: Container(
+        margin: EdgeInsets.all(70),
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-                child: Text(
-                  'Hello, please sign in to view our courses',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green,
-                    fontStyle: FontStyle.italic,
-                    letterSpacing: 1.5,
-                  ),
+              child: Text(
+                'Hello, please sign in to view our courses',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                  fontStyle: FontStyle.italic,
+                  letterSpacing: 1.5,
                 ),
+              ),
             ),
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.of(context).push(
-            //         MaterialPageRoute(builder: (context) => OtherPage1()));
-            //   },
-            //   child: Text("Other Page1"),
-            // ),
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.of(context).push(
-            //         MaterialPageRoute(builder: (context) => OtherPage2()));
-            //   },
-            //   child: Text("Other Page2"),
-            // ),
+            SizedBox(height: 20),
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Signin()));
               },
-              child: Text("Sign In"),
+              child: Text(
+                "Sign In",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.blue,
+                ),
+              ),
             ),
           ],
         ),
@@ -72,55 +79,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-//
-// class OtherPage1 extends StatelessWidget {
-//   const OtherPage1({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Other Page"),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Text("First Page"),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-// class OtherPage2 extends StatelessWidget {
-//   const OtherPage2({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Other Page2"),
-//         automaticallyImplyLeading: false,
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Text("Second Page"),
-//             TextButton(
-//                 onPressed: () {
-//                   Navigator.of(context).pop();
-//                 },
-//                 child: Text("Go back"))
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class Signin extends StatelessWidget {
   const Signin({Key? key}) : super(key: key);
@@ -132,47 +90,90 @@ class Signin extends StatelessWidget {
         title: Text("Navigation"),
       ),
       body: Center(
-        child: Container(
-          color: Colors.white,
-          height: 367,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container (
-                child: Text("Sign-In", style: TextStyle(fontSize: 28, color: Colors.white),),
-                color: Colors.blue,
-                padding: EdgeInsets.only(left: 100, right: 100, top: 20, bottom: 20),
-              ),
-              Container (
-                width: 250,
-                padding: EdgeInsets.only(top: 20, bottom: 20),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: "username"
+        child: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            height: 367,
+            width: 300,
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container (
+                  child: Text("Form", style: TextStyle(fontSize: 28, color: Colors.black),),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.4),
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                ),
+                SizedBox(height: 30),
+                Container (
+                  width: 300,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Username",
+                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              Container (
-                width: 250,
-                padding: EdgeInsets.only(bottom: 20),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: "password"
+                SizedBox(height: 20),
+                Container (
+                  width: 300,
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                width: 200,
-                margin: EdgeInsets.only(left: 50),
-                padding: EdgeInsets.only(bottom: 90),
-                child: Row (
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(onPressed: () {}, child: Text("Sign In")),
-                  ],
+                SizedBox(height: 50),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => OtherPage1()));
+                  },
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                    primary: Colors.blue,
+                    elevation: 5,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -180,3 +181,29 @@ class Signin extends StatelessWidget {
   }
 }
 
+
+class OtherPage1 extends StatelessWidget {
+  const OtherPage1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Other Page"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Page"),
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Go back"))
+          ],
+        ),
+      ),
+    );
+  }
+}
