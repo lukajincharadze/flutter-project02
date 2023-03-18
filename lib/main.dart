@@ -93,7 +93,7 @@ class Signin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Navigation"),
+        title: Text("Please Sign in"),
       ),
       body: Center(
         child: SingleChildScrollView(
