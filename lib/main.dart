@@ -46,6 +46,12 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset(
+              "assets/img/meeting.png",
+              height: 100,
+              width: 100,
+            ),
+            SizedBox(height: 30),
             Container(
               child: Text(
                 'Hello, please sign in to view our courses',
@@ -181,7 +187,6 @@ class Signin extends StatelessWidget {
   }
 }
 
-
 class OtherPage1 extends StatelessWidget {
   const OtherPage1({Key? key}) : super(key: key);
 
@@ -189,20 +194,394 @@ class OtherPage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Other Page"),
+        title: Text("Our Courses"),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).popUntil((route) => route.isFirst);
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => Signin()),
+              );
+            },
+            child: Container(
+              margin: EdgeInsets.only(right: 20),
+              child: Image(
+                image: AssetImage("assets/img/online-learning.png"),
+                height: 40,
+                width: 40,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Page"),
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text("Go back"))
-          ],
-        ),
+      body: ListView(
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            width: 500,
+            height: 130,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/img/design.png",
+                  width: 50,
+                  height: 50,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 20, left: 20),
+                      child: Text(
+                        "Design",
+                        style: TextStyle(fontSize: 28, color: Colors.green),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 20),
+                      child: Text(
+                        "Graphic Design, interface design,",
+                        style: TextStyle(fontSize: 15, color: Colors.green),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 20),
+                      child: Text(
+                        "Font design basics and font engineering,",
+                        style: TextStyle(fontSize: 15, color: Colors.green),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 20),
+                      child: Text(
+                        "Video graphics and editing",
+                        style: TextStyle(fontSize: 15, color: Colors.green),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                width: 500,
+                height: 130,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/img/code.png",
+                      width: 50,
+                      height: 50,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(top: 20, left: 20),
+                          child: Text(
+                            "Web Programming",
+                            style: TextStyle(fontSize: 28, color: Colors.green),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "Front-End web programming (HTML, CSS),",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "Web programming in PHP, ASP.NET. MVC,",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "JavaScript / React, Python, Bubble",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                width: 500,
+                height: 130,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/img/smartphone.png",
+                      width: 50,
+                      height: 50,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(top: 25, left: 20),
+                          child: Text(
+                            "Mobile Programming",
+                            style: TextStyle(fontSize: 28, color: Colors.green),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "Mobile programming for iOS,",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "Mobile Programming ANDROID (Java)",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                width: 500,
+                height: 130,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/img/game-development.png",
+                      width: 50,
+                      height: 50,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(top: 20, left: 20),
+                          child: Text(
+                            "Game Development",
+                            style: TextStyle(fontSize: 28, color: Colors.green),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "Programming in Unity,",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "Programming in C#,",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            "Programming in C++",
+                            style: TextStyle(fontSize: 15, color: Colors.green),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    width: 500,
+                    height: 130,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/img/code2.png",
+                          width: 50,
+                          height: 50,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(top: 20, left: 20),
+                              child: Text(
+                                "Coding",
+                                style: TextStyle(fontSize: 28, color: Colors.green),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "programming in C#, Automation Testing,",
+                                style: TextStyle(fontSize: 15, color: Colors.green),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Oracle Development (SQL + PL/SQL),",
+                                style: TextStyle(fontSize: 15, color: Colors.green),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Cyber security",
+                                style: TextStyle(fontSize: 15, color: Colors.green),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(
+                height: 10,
+              ),
+
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    width: 500,
+                    height: 130,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/img/networking.png",
+                          width: 50,
+                          height: 50,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(top: 20, left: 20),
+                              child: Text(
+                                "Communication",
+                                style: TextStyle(fontSize: 28, color: Colors.green),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Social media management, Copywriting,",
+                                style: TextStyle(fontSize: 15, color: Colors.green),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Web project management,",
+                                style: TextStyle(fontSize: 15, color: Colors.green),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Electronic commerce",
+                                style: TextStyle(fontSize: 15, color: Colors.green),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                  },
+                  child: Text("Home")),
+              SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
