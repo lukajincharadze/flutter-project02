@@ -223,6 +223,14 @@ class OtherPage1 extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.yellow,
               borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
             ),
             width: 500,
             height: 130,
@@ -283,6 +291,14 @@ class OtherPage1 extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.yellow,
                   borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
                 ),
                 width: 500,
                 height: 130,
@@ -341,6 +357,14 @@ class OtherPage1 extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.yellow,
                   borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
                 ),
                 width: 500,
                 height: 130,
@@ -392,6 +416,14 @@ class OtherPage1 extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.yellow,
                   borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
                 ),
                 width: 500,
                 height: 130,
@@ -452,6 +484,14 @@ class OtherPage1 extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.yellow,
                       borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                     ),
                     width: 500,
                     height: 130,
@@ -516,6 +556,14 @@ class OtherPage1 extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.yellow,
                       borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                     ),
                     width: 500,
                     height: 130,
@@ -568,6 +616,7 @@ class OtherPage1 extends StatelessWidget {
                   ),
                 ],
               ),
+
               SizedBox(
                 height: 10,
               ),
@@ -575,7 +624,8 @@ class OtherPage1 extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).popUntil((route) => route.isFirst);
                   },
-                  child: Text("Home")),
+                  child: Text("Home"),
+              ),
               SizedBox(
                 height: 10,
               ),
